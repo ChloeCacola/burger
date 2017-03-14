@@ -71,5 +71,5 @@ var orm = {
 
 }
 
-//export orm for burgers.js
+//export orm for burger.js
 module.exports = orm
