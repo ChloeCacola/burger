@@ -1,23 +1,26 @@
-<h1>Eat This Burger?</h1>
+<div class="center"><h1>Eat This Burger?</h1></div>
 
-<h2>Uneaten</h2>
+<div id="uneaten">
+ <h2>Uneaten</h2>
 
-  <ul>
+   <ul>
 	{{#each burgers}}
 		{{#unless this.devoured}}
 			<li>
 
 				<form action="/{{this.id}}?_method=PUT" method="POST">
 					<input type="hidden" name="ate" value="true">
-					<button type="submit">{{this.burger_name}}</button>
+					<button type="submit" class="btn">{{this.burger_name}}</button>
 				</form>
 
 			</li>
 		{{/unless}}
 	{{/each}}
-  </ul>
+   </ul>
+ </div>
 
-<h2>Eaten</h2>
+<div id="eaten">
+ <h2>Eaten</h2>
   <ul>
   	{{#each burgers}}
   		{{#if this.devoured}}
@@ -25,30 +28,32 @@
 
   				<form action="/{{this.id}}?_method=PUT" method="POST">
   					<input type="hidden" name="ate" value="false">
-  					<button type="submit">{{this.burger_name}}</button>
+  					<button type="submit" class="btn">{{this.burger_name}}</button>
   				</form>
 
   			</li>
   		{{/if}}
   	{{/each}}
   </ul>
-  	
-  		
+</div>
 
-<h2>Add Burger</h2>
+<div class="center" id="add">
+	<h2>Add Burger</h2>
+  <div class="add">
+	<form class="create-update-form" action="/" method="POST">
+		<div class="form-group">
+			<label for="burger">Burger name:</label>
+			<input type="text" id="burger" name="name">
+		</div>
 
-<form class="create-update-form" action="/" method="POST">
-	<div class="form-group">
-		<label for="burger">Burger name:</label>
-		<input type="text" id="burger" name="name">
-	</div>
+		<div class="form-group">
+			<br>
+			<label id="eatenTitle" for="devoured">Eaten?</label><br>
+			<input type="radio" name="ate" value="1"> Ate it<br>
+			<input type="radio" name="ate" value="0"> Uneaten
+		</div>
 
-	<div class="form-group">
-		<label for="devoured">Eaten?</label><br>
-		<input type="radio" name="ate" value="1"> Ate it<br>
-		<input type="radio" name="ate" value="0"> Uneaten
-	</div>
-
-	<button type="submit">Add Burger</button>
-
-</form>
+		<button type="submit" class="btn">Add Burger</button>
+  </div>
+	</form>
+</div>
