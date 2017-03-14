@@ -13,17 +13,29 @@ router.get("/", function(req,res) {
 	});
 });
 
+//show burgers in db
 router.post("/", function(req, res) {
 
-	burger.insertBurger();//insertparams
+	burger.createBurger([
+	  "burger_name", "devoured"
+	  ], [
+	  	req.body.name, req.body.ate
+	  ], function() {
+	  	res.redirect("/");
+	  });
 });
 
+//update a burger to eaten or not
 router.put("/:id", function(req,res) {
 	var condition = "id = " + req.params.id;
 
-	console.log("condition" + condition);
+	console.log("condition " + condition);
 
-	burger.updateBurger();//insertparams
+	burger.updateBurger({
+		devoured: req.body.ate
+	}, condition, function() {
+		res.redirect("/");
+	});
 });
 
 //router export for server.js
