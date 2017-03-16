@@ -28,7 +28,17 @@ h2 {
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: #F33;
    font-size: 30px;
+   margin-bottom: 0px;
 
+}
+
+h3 {
+	margin-top: 0px;
+	font-family: arial;
+	font-weight: normal;
+	color: #444;
+	font-size: 14px;
+	font-style: italic;
 }
 
 ul {
@@ -38,7 +48,7 @@ ul {
 }
 
 .btn {
-	background-color: #aa5; /* Green */
+	background-color: #aa5; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -62,8 +72,7 @@ ul {
 }
 
 #add {
-	clear: left;
-	clear: right;
+	clear: both;
 	padding-top: 20px;
 }
 
@@ -76,6 +85,19 @@ label {
 	font-family: arial;
 }
 
+#burger-name {
+	letter-spacing: .1em;
+	color: #555;
+}
+
 #eatenTitle {
-	text-decoration: underline;
+	margin-top: 10px;
+	font-style: italic;
+	letter-spacing: .1em;
+	color: #555;
+}
+
+.radio {
+	margin: 5px;
+	color: #F22;
 }
